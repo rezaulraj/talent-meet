@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-arimo: "Arimo", sans-serif;
+
+  /* Backdrop */
+  --color-primary-bg: #fffef9;
+
+  /* Ink (text) */
+  --color-ink: #171b2e;
+  --color-ink-light: #5b6178;
+
+  /* Brand palette — pulled straight from the logo mark */
+  --color-brand-indigo: #2632e0;
+  --color-brand-crimson: #d50042;
+  --color-brand-amber: #f8af3c;
+  --color-brand-sky: #01c2fb;
+  --color-brand-green: #50a153;
+  --color-brand-teal: #027a68;
+
+  --shadow-dropdown:
+    0 24px 48px -12px rgba(23, 27, 46, 0.18),
+    0 4px 14px -4px rgba(23, 27, 46, 0.08);
+}

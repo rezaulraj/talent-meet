@@ -1,0 +1,30 @@
+1. Hero — the "wow" moment
+
+This is where you spend your one big risk.
+
+Canvas background: a slow-moving particle/node network (WebGL via three.js or plain <canvas>) where dots represent candidates and lines connect them to "placements" — subtly implies your actual business (matching people to jobs) instead of generic floating shapes.
+GSAP: SplitText to reveal the headline word-by-word or character-by-character on load, staggered with a slight blur-to-focus effect. Pair with a Timeline so the nav, headline, subtext, and CTA button choreograph in sequence (nav first, then text, then button) rather than fading in together.
+Micro-detail: an animated counter ticking up next to the headline ("12,000+ placed across 18 countries") using GSAP's ScrollTrigger + a number-tween plugin.
+2. Trust bar (logos / accreditations)
+Infinite horizontal marquee (GSAP ScrollTrigger isn't even needed here — a simple xPercent tween looping) of client logos or certification badges. Pause on hover.
+3. Services overview
+Cards on a staggered scroll reveal: ScrollTrigger with batch() so cards animate in as they enter viewport, staggered by ~0.1s, translateY + opacity.
+On hover, a subtle magnetic cursor effect (card tilts toward cursor position using GSAP quickTo) — feels expensive without being loud.
+4. Industries — the signature scroll moment
+
+This is a great spot for a pinned horizontal scroll:
+
+ScrollTrigger with pin: true and scrub: true turns vertical scroll into horizontal movement through industry cards (Construction → Healthcare → Manufacturing...) — like flipping through a deck. This is the kind of moment people screenshot.
+Each card has a background canvas texture (subtle animated grain or gradient mesh unique to that industry) rather than a static photo.
+5. How it works / process
+An animated SVG path (a route line, echoing "sourcing across borders") that draws itself as you scroll, with numbered steps popping in at each vertex. ScrollTrigger scrub tied to stroke-dashoffset.
+6. Global presence
+Instead of a static map image: an SVG world map where country pins light up sequentially (staggered GSAP fromTo on opacity/scale) as the section enters view, with a soft pulsing glow (canvas radial gradient) on your active countries — makes "we operate globally" tangible.
+7. Stats / impact
+A dark, high-contrast band with big animated numbers (candidates placed, years active, retention rate) — GSAP counts them up on scroll-into-view, easing out so they don't feel mechanical.
+8. Success stories / testimonials
+A draggable/swipeable carousel (GSAP Draggable plugin) rather than auto-rotating dots — feels premium and gives the user control.
+9. Featured jobs
+A live-feeling ticker or auto-scrolling row of job cards, pauses on hover, "view all" fades in the CTA at the end of the row.
+10. Final CTA
+Bring back a toned-down version of the hero's canvas particle effect — bookending the page — with the Contact Us button front and center. This kind of visual echo (not identical, but a callback) is what makes a page feel designed rather than assembled section-by-section.

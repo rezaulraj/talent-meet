@@ -200,12 +200,12 @@ const Footer = () => {
                 >
                   hello@talentmeet.com
                 </a>
-                <a
+                {/* <a
                   href="tel:+880000000000"
                   className="block transition-colors hover:text-primary-bg"
                 >
                   +880 00 000 0000
-                </a>
+                </a> */}
               </div>
 
               <div className="mt-6 flex gap-3">

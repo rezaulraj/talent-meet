@@ -146,18 +146,12 @@ const Footer = () => {
         </svg>
       </div>
 
-      {/* everything below the curve lives on its own ink-colored layer,
-          attached seam-free right under the SVG so the notch above shows
-          the page's cream background, not another slab of ink */}
       <div className="relative -mt-px bg-ink">
         <div className="relative z-10 mx-auto max-w-7xl px-6 pb-8 pt-16 sm:px-8 lg:px-12">
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
             <div className="footer-reveal col-span-2 translate-y-4 opacity-0 sm:col-span-3 lg:col-span-1">
               <div className="mb-5 flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[linear-gradient(120deg,#2632E0,#01C2FB)]" />
-                <span className="text-[19px] font-bold tracking-[-0.01em] text-primary-bg">
-                  Talent Meet
-                </span>
+                <img src="/white.png" alt="" className="h-12 w-auto" />
               </div>
               <p className="max-w-xs text-[13.5px] leading-relaxed text-primary-bg/55">
                 Sourcing, screening, and placing skilled people across borders —

@@ -162,7 +162,7 @@ const Header = () => {
             href="/contact"
             className="group relative overflow-hidden rounded-tl-2xl rounded-br-2xl p-[1.5px] transition-transform duration-500 hover:-translate-y-0.5"
           >
-            <span className="absolute inset-0 rounded-tl-2xl rounded-br-2xl bg-[linear-gradient(120deg,#2632E0,#01C2FB,#50A153,#F8AF3C,#D50042)]" />
+            <span className="absolute inset-0 rounded-tl-2xl rounded-br-2xl bg-[linear-gradient(120deg,#F31719,#F31719,#F9AB09)]" />
             <span className="relative flex items-center gap-2 overflow-hidden rounded-tl-2xl rounded-br-2xl bg-primary-bg px-6 py-2.5 text-sm font-semibold text-ink transition-colors duration-500 group-hover:bg-transparent group-hover:text-white">
               <span className="absolute inset-0 translate-x-[-120%] bg-white/25 blur-md transition-all duration-700 ease-out group-hover:translate-x-[120%]" />
               <span className="relative z-10">Contact Us</span>
@@ -259,7 +259,7 @@ const Header = () => {
             href="/contact"
             className="group relative mt-4 block overflow-hidden rounded-full p-[1.5px]"
           >
-            <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#F31719,#F31719,#50A153,#F8AF3C,#D50042)]" />
+            <span className="absolute inset-0 rounded-full bg-[linear-gradient(120deg,#F31719,#F31719,#F9AB09)]" />
             <span className="relative block rounded-full bg-primary-bg px-7 py-3 text-center text-sm font-semibold text-ink transition-colors duration-500 group-active:bg-transparent group-active:text-white">
               Contact Us
             </span>

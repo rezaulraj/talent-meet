@@ -1,44 +1,30 @@
 import React, { useState } from "react";
-import logo from "/telant.png";
+import logo from "/talentgrid.png";
 
 const navItem = [
   {
     title: "About Us",
     url: "/about",
-    children: [
-      { title: "Company Overview", url: "/about/company" },
-      { title: "Our Mission & Vision", url: "/about/mission" },
-      { title: "Our Global Presence", url: "/about/global-presence" },
-    ],
+    // children: [
+    //   { title: "Company Overview", url: "/about/company" },
+    //   { title: "Our Mission & Vision", url: "/about/mission" },
+    //   { title: "Our Global Presence", url: "/about/global-presence" },
+    // ],
   },
   {
     title: "Services",
     url: "/services",
-    children: [
-      { title: "Workforce Sourcing", url: "/services/workforce-sourcing" },
-      { title: "Overseas Recruitment", url: "/services/overseas-recruitment" },
-      { title: "Executive Search", url: "/services/executive-search" },
-      { title: "Bulk Hiring", url: "/services/bulk-hiring" },
-      { title: "Permanent Staffing", url: "/services/permanent-staffing" },
-      { title: "Temporary Staffing", url: "/services/temporary-staffing" },
-      { title: "Recruitment Process Outsourcing (RPO)", url: "/services/rpo" },
-      { title: "Candidate Screening", url: "/services/candidate-screening" },
-      { title: "Trade Testing & Assessment", url: "/services/trade-testing" },
-      { title: "Payroll & HR Solutions", url: "/services/payroll-hr" },
-      { title: "Visa & Documentation Support", url: "/services/visa-support" },
-      { title: "Relocation & Onboarding", url: "/services/relocation" },
-    ],
   },
   {
     title: "Employers",
     url: "/employers",
-    children: [
-      { title: "Hire Talent", url: "/employers/hire-talent" },
-      { title: "Employer Solutions", url: "/employers/solutions" },
-      { title: "Recruitment Process", url: "/employers/process" },
-      { title: "Request Employees", url: "/employers/request-employees" },
-      { title: "Why Choose Us", url: "/employers/why-us" },
-    ],
+    // children: [
+    //   { title: "Hire Talent", url: "/employers/hire-talent" },
+    //   { title: "Employer Solutions", url: "/employers/solutions" },
+    //   { title: "Recruitment Process", url: "/employers/process" },
+    //   { title: "Request Employees", url: "/employers/request-employees" },
+    //   { title: "Why Choose Us", url: "/employers/why-us" },
+    // ],
   },
   {
     title: "Candidates",
@@ -94,20 +80,23 @@ const Header = () => {
     <header className="font-arimo fixed left-0 top-0 z-50 w-full border-b border-ink/5 bg-primary-bg/95 backdrop-blur-xl">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="/" className="flex shrink-0 items-center">
-          <img src={logo} alt="Logo" className="h-12 w-auto object-contain" />
+          <img src={logo} alt="Logo" className="h-18 w-auto object-contain" />
         </a>
 
         <nav className="hidden items-center lg:flex">
           {navItem.map((item, index) => {
-            const wide = item.children.length > 6;
+            // Check if children exists and has length
+            const hasChildren = item.children && item.children.length > 0;
+            const wide = hasChildren && item.children.length > 6;
+
             return (
               <div key={index} className="group relative">
                 <a
                   href={item.url}
-                  className="relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[14px] font-medium text-ink transition-colors duration-300 hover:text-brand-indigo"
+                  className="relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[14px] font-medium text-ink transition-colors duration-300 hover:text-[#000000]"
                 >
                   {item.title}
-                  {item.children.length > 0 && (
+                  {hasChildren && (
                     <svg
                       viewBox="0 0 10 6"
                       className="mt-px h-2 w-2.5 fill-none stroke-ink-light stroke-[1.5] transition-transform duration-300 group-hover:rotate-180 group-hover:stroke-brand-indigo"
@@ -119,10 +108,10 @@ const Header = () => {
                       />
                     </svg>
                   )}
-                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-brand-indigo transition-all duration-500 ease-out group-hover:w-[60%]" />
+                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-[#D50042] transition-all duration-500 ease-out group-hover:w-[60%]" />
                 </a>
 
-                {item.children.length > 0 && (
+                {hasChildren && (
                   <div
                     className={`invisible absolute left-1/2 top-full mt-5 -translate-x-1/2 translate-y-3 rounded-[28px] bg-primary-bg p-3 opacity-0 shadow-dropdown ring-1 ring-ink/5 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
                       wide ? "w-[560px]" : "w-72"
@@ -162,7 +151,7 @@ const Header = () => {
             href="/contact"
             className="group relative overflow-hidden rounded-tl-2xl rounded-br-2xl p-[1.5px] transition-transform duration-500 hover:-translate-y-0.5"
           >
-            <span className="absolute inset-0 rounded-tl-2xl rounded-br-2xl bg-[linear-gradient(120deg,#F31719,#F31719,#F9AB09)]" />
+            <span className="absolute inset-0 rounded-tl-2xl rounded-br-2xl bg-[linear-gradient(120deg,#000000,#000008,#D50042)]" />
             <span className="relative flex items-center gap-2 overflow-hidden rounded-tl-2xl rounded-br-2xl bg-primary-bg px-6 py-2.5 text-sm font-semibold text-ink transition-colors duration-500 group-hover:bg-transparent group-hover:text-white">
               <span className="absolute inset-0 translate-x-[-120%] bg-white/25 blur-md transition-all duration-700 ease-out group-hover:translate-x-[120%]" />
               <span className="relative z-10">Contact Us</span>
@@ -207,53 +196,59 @@ const Header = () => {
             Home
           </a>
 
-          {navItem.map((item, index) => (
-            <div key={index}>
-              {item.children.length > 0 ? (
-                <>
-                  <button
-                    onClick={() => setOpenSub(openSub === index ? null : index)}
-                    className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-brand-indigo/[0.06]"
+          {navItem.map((item, index) => {
+            const hasChildren = item.children && item.children.length > 0;
+
+            return (
+              <div key={index}>
+                {hasChildren ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setOpenSub(openSub === index ? null : index)
+                      }
+                      className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-brand-indigo/[0.06]"
+                    >
+                      {item.title}
+                      <svg
+                        viewBox="0 0 10 6"
+                        className={`h-2.5 w-3 fill-none stroke-ink-light stroke-[1.5] transition-transform duration-300 ${openSub === index ? "rotate-180" : ""}`}
+                      >
+                        <path
+                          d="M1 1l4 4 4-4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${openSub === index ? "max-h-[500px]" : "max-h-0"}`}
+                    >
+                      <div className="mt-1 grid grid-cols-1 gap-1 rounded-3xl bg-white p-2 shadow-sm sm:grid-cols-2">
+                        {item.children.map((sub, subIndex) => (
+                          <a
+                            key={subIndex}
+                            href={sub.url}
+                            className="block rounded-2xl px-4 py-3 text-sm font-medium text-ink-light transition-colors duration-300 hover:bg-brand-indigo/[0.06] hover:text-brand-indigo"
+                          >
+                            {sub.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <a
+                    href={item.url}
+                    className="block rounded-2xl px-4 py-3 text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-brand-indigo/[0.06]"
                   >
                     {item.title}
-                    <svg
-                      viewBox="0 0 10 6"
-                      className={`h-2.5 w-3 fill-none stroke-ink-light stroke-[1.5] transition-transform duration-300 ${openSub === index ? "rotate-180" : ""}`}
-                    >
-                      <path
-                        d="M1 1l4 4 4-4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${openSub === index ? "max-h-[500px]" : "max-h-0"}`}
-                  >
-                    <div className="mt-1 grid grid-cols-1 gap-1 rounded-3xl bg-white p-2 shadow-sm sm:grid-cols-2">
-                      {item.children.map((sub, subIndex) => (
-                        <a
-                          key={subIndex}
-                          href={sub.url}
-                          className="block rounded-2xl px-4 py-3 text-sm font-medium text-ink-light transition-colors duration-300 hover:bg-brand-indigo/[0.06] hover:text-brand-indigo"
-                        >
-                          {sub.title}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <a
-                  href={item.url}
-                  className="block rounded-2xl px-4 py-3 text-[15px] font-semibold text-ink transition-colors duration-300 hover:bg-brand-indigo/[0.06]"
-                >
-                  {item.title}
-                </a>
-              )}
-            </div>
-          ))}
+                  </a>
+                )}
+              </div>
+            );
+          })}
 
           <a
             href="/contact"

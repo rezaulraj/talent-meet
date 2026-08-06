@@ -158,7 +158,7 @@ const FinalCTA = () => {
       <div
         className="cta-card relative mx-auto max-w-5xl overflow-hidden rounded-tl-[10.5rem] rounded-br-[10.5rem] opacity-0 shadow-[0_40px_80px_-30px_rgba(213,0,66,0.45)]"
         style={{
-          background: "linear-gradient(160deg, #D50042 0%, #97002e 100%)",
+          background: "linear-gradient(160deg, #000000 0%, #000000 100%)",
         }}
       >
         <div className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />

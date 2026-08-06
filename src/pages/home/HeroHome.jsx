@@ -223,7 +223,7 @@ const HeroHome = () => {
               href="/contact"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-tl-2xl rounded-br-2xl bg-black px-8 py-4 text-[14.5px] font-semibold text-primary-bg transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1"
             >
-              <span className="absolute inset-0 bg-[linear-gradient(120deg,#2632E0,#01C2FB,#027A68,#F8AF3C,#D50042)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="absolute inset-0 bg-[linear-gradient(120deg,#000000,#000008,#D50042)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="relative z-10">Build your Dream Team →</span>
             </a>
             <a

@@ -151,7 +151,11 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-[1.3fr_repeat(3,1fr)]">
             <div className="footer-reveal col-span-2 translate-y-4 opacity-0 sm:col-span-3 lg:col-span-1">
               <div className="mb-5 flex items-center gap-2">
-                <img src="/white.png" alt="" className="h-12 w-auto" />
+                <img
+                  src="/talentgrid.png"
+                  alt="TalentGrid"
+                  className="h-20 w-auto brightness-0 invert"
+                />
               </div>
               <p className="max-w-xs text-[13.5px] leading-relaxed text-primary-bg/55">
                 Sourcing, screening, and placing skilled people across borders —

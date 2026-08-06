@@ -10,14 +10,9 @@ const BRAND = "Talent Grid";
 
 const PENTAGON_CLIP = "polygon(16% 0%, 100% 0%, 100% 100%, 16% 100%, 0% 50%)";
 
-/* Hero image shape this round — a hexagon, deliberately different from
-   the pentagon (Services), parallelogram (About), and ribbon (previous
-   Employers hero) used elsewhere on the site. */
 const HEXAGON_CLIP =
   "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)";
 
-/* Mini "partnership journey" rail shown on the left of the hero — a
-   preview of the relationship, not a page-scroll progress indicator. */
 const HERO_RAIL_STEPS = ["Request", "Match", "Deploy", "Grow"];
 const HERO_RAIL_W = 56;
 
@@ -113,8 +108,6 @@ const Employers = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: wire this up to your real endpoint / CRM. Left as a local
-    // confirmation state so the form is fully functional to demo.
     setSubmitted(true);
   };
 
@@ -123,11 +116,6 @@ const Employers = () => {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    /* ------------------------------------------------------------ */
-    /*  Hero "partnership journey" mini rail — a small entrance       */
-    /*  animation (not scroll-driven), four nodes connected by a      */
-    /*  gentle S-curve, drawn once on load.                           */
-    /* ------------------------------------------------------------ */
     const heroCanvas = heroRailCanvasRef.current;
     const heroCtx = heroCanvas.getContext("2d");
     const heroDpr = Math.max(1, window.devicePixelRatio || 1);
@@ -211,10 +199,6 @@ const Employers = () => {
     };
     window.addEventListener("resize", onHeroResize);
 
-    /* ------------------------------------------------------------ */
-    /*  Recruitment Process — small in-flow snake rail, left side,   */
-    /*  scoped to this one section only (not fixed/full-page).       */
-    /* ------------------------------------------------------------ */
     const canvas = processCanvasRef.current;
     const ctx2d = canvas.getContext("2d");
     const dpr = Math.max(1, window.devicePixelRatio || 1);
@@ -428,8 +412,7 @@ const Employers = () => {
   }, []);
 
   return (
-    <div ref={rootRef} className="bg-white font-arimo text-black">
-      {/* ================= WORDMARK ================= */}
+    <div ref={rootRef} className="bg-[#FFFEF9] font-arimo text-black">
       <div className="absolute left-6 top-6 z-30 flex items-center gap-2.5 sm:left-10 sm:top-8">
         <span
           className="block h-5 w-5"
@@ -441,29 +424,12 @@ const Employers = () => {
         </span>
       </div>
 
-      {/* ================= HERO — partnership framing, left progress rail, hexagon image ================= */}
-      <section className="relative overflow-hidden bg-white pb-32 pt-10">
+      <section className="relative overflow-hidden bg-[#FFFEF9] pb-32 pt-10">
         <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 sm:px-10 lg:grid-cols-[56px_1fr_1fr] lg:items-center lg:gap-14 lg:px-16">
-          {/* Left — the partnership-journey mini rail (entrance animation, not scroll-tied) */}
+
           <div ref={heroRailWrapRef} className="hidden h-[300px] lg:block">
-            {/* <div className="relative h-full" style={{ width: HERO_RAIL_W }}>
-              <canvas ref={heroRailCanvasRef} className="absolute inset-0" />
-              {HERO_RAIL_STEPS.map((label, i) => (
-                <span
-                  key={label}
-                  className="absolute -right-1 translate-x-full whitespace-nowrap pl-2 text-[10px] font-bold uppercase tracking-[0.1em] text-black/45"
-                  style={{
-                    top: `${(i / (HERO_RAIL_STEPS.length - 1)) * 100}%`,
-                    transform: "translate(100%, -50%)",
-                  }}
-                >
-                  {label}
-                </span>
-              ))}
-            </div> */}
           </div>
 
-          {/* Center — copy */}
           <div>
             <div className="hero-eyebrow mb-6 inline-flex items-center gap-2 rounded-full border border-black/15 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-black/70">
               <span
@@ -513,7 +479,6 @@ const Employers = () => {
             </div>
           </div>
 
-          {/* Right — hexagon-clipped image + floating badge + quick-request card */}
           <div className="relative">
             <div
               className="hero-image relative aspect-square w-full overflow-hidden sm:aspect-[4/3.4]"
@@ -536,8 +501,7 @@ const Employers = () => {
               </span>
             </div>
 
-            {/* Floating quick-request card, overlapping the hexagon's lower edge */}
-            <div className="quick-card relative z-10 -mt-10 w-[92%] max-w-sm rounded-2xl border border-black/10 bg-white p-6 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.35)] sm:ml-auto sm:mr-4">
+            <div className="quick-card relative z-10 -mt-10 w-[92%] max-w-sm rounded-2xl border border-black/10 bg-[#FFFEF9] p-6 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.35)] sm:ml-auto sm:mr-4">
               <p
                 className="text-[11px] font-bold uppercase tracking-[0.14em]"
                 style={{ color: RED }}
@@ -579,7 +543,6 @@ const Employers = () => {
         </div>
       </section>
 
-      {/* ================= HIRE TALENT ================= */}
       <section className="mx-auto max-w-6xl px-6 py-24 sm:px-10 sm:py-28">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="reveal-up relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -642,7 +605,6 @@ const Employers = () => {
         </div>
       </section>
 
-      {/* ================= EMPLOYER SOLUTIONS ================= */}
       <section
         id="solutions"
         className="bg-black px-6 py-24 text-white sm:px-10 sm:py-28"
@@ -697,7 +659,6 @@ const Employers = () => {
         </div>
       </section>
 
-      {/* ================= RECRUITMENT PROCESS ================= */}
       <section className="mx-auto max-w-5xl px-6 py-24 sm:px-10 sm:py-28">
         <div className="reveal-up mx-auto mb-14 max-w-2xl text-center">
           <span
@@ -750,7 +711,6 @@ const Employers = () => {
         </div>
       </section>
 
-      {/* ================= REQUEST EMPLOYEES — the form, as the primary CTA ================= */}
       <section
         id="request"
         className="relative overflow-hidden bg-black px-6 py-24 text-white sm:px-10 sm:py-28"
@@ -813,7 +773,7 @@ const Employers = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-white p-7 text-black shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] sm:p-9">
+          <div className="rounded-3xl bg-[#FFFEF9] p-7 text-black shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] sm:p-9">
             {submitted ? (
               <div className="flex min-h-[380px] flex-col items-center justify-center text-center">
                 <span
@@ -1004,7 +964,6 @@ const Employers = () => {
         </div>
       </section>
 
-      {/* Shared field styling for the request form's inputs */}
       <style>{`
         .form-input {
           width: 100%;
